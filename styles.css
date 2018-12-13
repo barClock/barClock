@@ -1,0 +1,16 @@
+* {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: arial, verdana, sans-serif;
+  background: #2f3b6d;
+  text-align: center;
+}
+
+canvas {
+  width: 90%;
+  height: 25%;
+  margin: -0.25em;
+}
