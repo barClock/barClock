@@ -55,10 +55,13 @@ function drawTime(elem, unit, maxUnit, ctx, smaller, smallest, animate) {
   h = h * 0.25;
   w = w * 0.9;
 
-  document.getElementById(elem).width = w*4;
-  document.getElementById(elem).height = h*4;
+  document.getElementById(elem).width = w*2;
+  document.getElementById(elem).height = h*2;
   document.getElementById(elem).style.width = w + "px";
   document.getElementById(elem).style.height = h + "px";
+
+  h *= 2;
+  w *= 2;
 
   ctx.fillStyle = "#2f3b6d";
   ctx.fillRect(0,0,w,h);
