@@ -4,12 +4,17 @@
 
 var FirstRun = true;
 
+function reload() {
+  FirstRun = true;
+  drawStuff();
+}
+
 function prepStuff() {
   window.setInterval('drawStuff()', 20);
 }
 
 function drawStuff() {
-  var day = document.getElementById('day').getContext('2d');
+  var day = document.getElementById('day');
   var hours = document.getElementById('hours').getContext('2d');
   var minutes = document.getElementById('minutes').getContext('2d');
   var seconds = document.getElementById('seconds').getContext('2d');
@@ -57,18 +62,10 @@ function drawStuff() {
     drawTime('hours', currTime.getHours(), 24, ctx, currTime.getMilliseconds(), 1000, tmp);
   }
 
-  function drawDays(currTime, ctx) {
+  function drawDays(currTime, day) {
     // setup canvas
-    var elem = document.getElementById('day');
     w = window.innerWidth;
     h = window.innerHeight;
-    h = h * 0.25;
-    w = w * 0.9;
-
-    elem.width = w * 4;
-    elem.height = h * 4;
-    elem.style.width = w + "px";
-    elem.style.height = h + "px";
 
     // determine weekday
     var weekday = new Array(7);
@@ -79,12 +76,10 @@ function drawStuff() {
     weekday[4] = "Donnerstag";
     weekday[5] = "Freitag";
     weekday[6] = "Samstag";
-    // elem.innerText = weekday[currTime.getDay()];
-    ctx.font = "" + h * 2 + "px Ubuntu";
-    ctx.fillStyle = "white";
-    ctx.textAlign = "center";
-    ctx.justifyContent = "center";
-    ctx.fillText(weekday[currTime.getDay()], elem.width/2, elem.height/2 + h/2.5);
+    
+    day.innerText = weekday[currTime.getDay()];
+    day.style.fontSize = h*0.125 + "px";
+    day.style.top = h*0.25*0.25 + 'px';
   }
 
   function drawTime(elem, unit, maxUnit, ctx, smaller, smallest, animate) {
