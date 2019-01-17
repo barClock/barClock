@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Clock - It's Time</title>
-    <script src="Uhr_Michael_Keller.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body id="myBody" onload="prepStuff();">
-    <canvas id="day"></canvas>
+
+<head>
+  <meta charset="utf-8">
+  <title>Clock - It's Time</title>
+  <script src="Uhr_Michael_Keller.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="myBody" onload="prepStuff();" onresize="reload();">
+  <div class="block">
+    <p id="day"></p>
+  </div>
+  <div class="block">
     <canvas id="hours"></canvas>
+  </div>
+  <div class="block">
     <canvas id="minutes"></canvas>
+  </div>
+  <div class="block">
     <canvas id="seconds"></canvas>
-  </body>
+  </div>
+</body>
+
 </html>
